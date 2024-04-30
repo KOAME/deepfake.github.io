@@ -1,0 +1,25 @@
+/* Set styles for all tables */
+table {
+    width: 100%; /* Make the table width fill the container */
+    border-collapse: collapse; /* Remove table gaps */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Add borders */
+    text-align: center; /* Center-align text */
+    padding: 8px; /* Add padding */
+}
+
+/* Set specific styles for audio controls and related columns */
+td audio {
+    width: 100%; /* Make audio controls fill the cell width */
+}
+
+/* Set minimum width for each column */
+td:nth-child(1), td:nth-child(3) {
+    min-width: 150px; /* Minimum width for text columns */
+}
+
+td:nth-child(2), td:nth-child(4) {
+    min-width: 200px; /* Minimum width for audio columns */
+}
