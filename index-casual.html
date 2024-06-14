@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeepFake Audios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>DeepFake Audios by GPT-SoVITS</h1>
+    </header>
+    <div id="tablesContainer"></div>
+
+    <script>
+        const audioGroups = [
+            {
+                name: 'Biden',
+                training: 'politicians-en/biden/vocal_biden01_1_vocals.wav_10.wav_main_vocal.wav',
+                prompt_texts: ["Those bragging about overturning Roe v. Wade have no clue about the power of women.",
+"but they found out when reproductive freedom was on the ballot we won in 2022 and 2020 and we'll win again in 2024.",
+"Send me a Congress that supports the right to choose. I promise you, I'll restore Roe v. Wade as the law of the land again.",
+"Folks, America cannot go back.",
+"I'm here tonight to show what I believe in the way forward, because I know how far we come.",
+"Four years ago next week, before I came to office,",
+"The country was hit by the worst pandemic and the worst economic crisis in a century.",
+"Remember the fear, record losses? Remember the spikes in crime and the murder-raging virus?",
+"It took more than 1 million American lives of loved ones, millions left behind.",
+"a mental health crisis, of isolation and loneliness, a president my predecessor",
+"fail the most basic presidential duty that he owes to American people, the duty to care.",
+"I think that's unforgivable. I came to office determined to get us through one of the toughest",
+"periods in the nation's history. We have. It doesn't make news in a thousand cities and towns",
+"The American people are writing the greatest comeback story never told.",
+"So let's tell the story here. Tell it here and now.",
+"America's comeback is building the future of American possibilities, building an economy from the middle out and the bottom up, not the top down.",
+"Investing in all America and all Americans to make sure everyone has a fair shot",
+"We leave no one, no one behind. The pandemic no longer controls our lives.",
+"The vaccines that saved us from COVID are now being used to beat cancer.",
+"Turning setback into comeback. That's what America does. That's what America does.",
+"Folks, my inherited economy is on the brink.",
+],
+                prompts: [
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0000856960_0001044800.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0001044800_0001317120.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0001806080_0002063040.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0002328000_0002471360.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0002481280_0002667840.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0002671040_0002792640.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0002792640_0002952640.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0002967680_0003197760.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0003198080_0003386240.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0003394240_0003575360.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0003575360_0003756480.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0003780480_0003964800.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0003964800_0004201280.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0004201280_0004321280.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0004552320_0004712000.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0004739200_0004977920.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0004977920_0005168960.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0005172480_0005355520.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0005359680_0005536000.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0005536000_0005742080.wav',
+'politicians-en/biden/prompt/biden01_2_vocals.wav_0005895360_0006085440.wav'
+                ],
+                fake_texts: [
+"Folks, just like every hard-working American family sitting around the kitchen table making tough decisions about their budget, our government needs to do the same.",
+"We've got to tighten our belts and trim down the government to ensure it's as lean and effective as possible.",
+"Every dollar we spend must be scrutinized, cutting waste and focusing on what truly matters.",
+"By reducing our national debt, we're not just making numbers add up; we're securing a brighter, more sustainable future for our children and grandchildren.",
+"It's not just good economics; it's a moral imperative.",
+"Here's the deal, cutting taxes isn't just about boosting the economy; it's about returning to a fundamental American principle: trust in the individual.",
+"By lowering taxes, we put money back into the pockets of the people who earned it — the workers, small business owners, and families that drive this country forward.",
+"They know best how to spend their hard-earned money, not the government. This policy is about fostering respect and responsibility, enabling our citizens to invest in their futures, which in turn strengthens our economy.",
+"I believe wholeheartedly in the capacity of American businesses to innovate, lead, and grow.",
+"That's why we need to take a hard look at the regulations we impose and cut back the red tape that binds the hands of our entrepreneurs.",
+"We want a system that promotes development and innovation, not one that stifles it under layers of bureaucracy.",
+"By streamlining regulations, we can unleash the true potential of our economy, facilitating faster growth and more robust job creation.",
+"It’s time to trust our business leaders and give them the freedom to thrive.",
+"America's spirit of entrepreneurship is what sets us apart on the global stage.",
+"That's why the government should step back and allow the free market to operate as it was meant to.",
+"This approach is the cornerstone of American economic policy — it encourages competition, drives innovation, and results in better products and services for everyone.",
+"By reinforcing free market policies, we not only uphold our traditions of personal liberty and enterprise but also ensure that our economy remains dynamic and competitive.",
+"Look, we all know that there are places where the private sector outperforms the public in terms of efficiency and innovation.",
+"There are numerous services that the government provides that could be more effectively managed by private enterprises.",
+"By outsourcing these services, we can improve their quality and cost-effectiveness, ensuring that taxpayers get the best possible return on their investments.",
+"This strategy is about pragmatic governance—delivering superior services while being stewards of the public purse."
+                ],
+                fakes: 'politicians-en/biden/results/'
+            },
+            {
+                name: 'Trump',
+                training: 'politicians-en/trump/vocal_trump01_1_vocals.wav_10.wav',
+                prompt_texts: ["That is also the story of Liberty University.",
+"When I think about the visionary founder of this great institution,",
+"Reverend Jerry Falwell Sr. I can only imagine how excited he would be if he could see all of this",
+"and all of you today, and how proud he would be",
+"In just two days, we will mark the 10th anniversary",
+"of Reverend Falwell's passing. And I used to love",
+"watching him on television, hearing him preach,",
+"He was a very special man. He would be so proud not just at",
+"what you've achieved, but of the young men and women of character that you've all become.",
+"And Jerry, I know your dad is looking down on you right now",
+"Reverend Falwell's life is a testament to the power of faith to change the world.",
+"The inspiring legacy that we see all around us in this great stadium, this is a beautiful,",
+"stadium, and it is packed. I'm so happy about that. I said, how are you gonna fill up a place like that?",
+"and in your smiling faces, but it all began with a vision. That vision",
+"was of a world-class university.",
+"You voted. No doubt many people",
+"told him his vision wasn't possible. And I am sure they continued to say that",
+"So long after he started, at the beginning with just 154 students,",
+"But the fact is, no one has ever achieved anything significant without a chorus of critics",
+                ],
+                prompts: [
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0000000000_0000148800.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0000153280_0000307520.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0000312000_0000588160.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0000588160_0000739840.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0000866240_0000998080.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0000998080_0001160000.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0001160000_0001307520.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0001309120_0001477760.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0001477760_0001658240.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0001670080_0001840000.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0002121600_0002389120.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0002398080_0002644480.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0002644480_0002872640.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0003089280_0003275520.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0003280640_0003418880.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0003881920_0004046080.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0004054080_0004242560.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0004251520_0004446720.wav',
+    'politicians-en/trump/prompt/vocal_trump01_2_vocals.wav_10.wav_0004449600_0004660800.wav'
+                ],
+                fake_texts: [
+"Folks, let's talk taxes. Now, I know some of you out there are doing really well. And that's fantastic! But let's not forget about those who are struggling to make ends meet.",
+"We're talking about teachers, nurses, small business owners – hardworking Americans who deserve a break. That's why we need to make sure our tax system is fair.",
+"You see, it's not about punishing success; it's about ensuring that everyone pays their fair share. Because when the playing field is level, that's when America truly shines.",
+"So, to all my fellow millionaires and billionaires out there, it's time to step up. Let's invest in our communities, let's invest in our future.",
+"Together, we can build a stronger, more prosperous nation for all.",
+"Welfare. It's a word that's been tossed around a lot lately. Some say it's a handout, others say it's a lifeline.",
+"Well, I'll tell you what I think – it's a safety net. And in America, we take care of our own.",
+"Now, I'm not saying we should just be giving handouts left and right. No, sir. What I'm saying is, we need to help those who truly need it.",
+"Whether it's a single mom working two jobs to put food on the table or a veteran struggling to find a job, we need to be there for them.",
+"So let's strengthen our welfare programs. Let's make sure they're there for those who need them most.",
+"Because when we lift each other up, that's when America is at its best.",
+"Now, I'm a businessman, through and through. I love the free market, I really do.",
+"But let's be real here – sometimes, it needs a little bit of guidance. That's where regulations come in.",
+"Now, I'm not talking about drowning businesses in red tape. No way. What I'm talking about is smart regulations –",
+"the kind that protect consumers, ensure fair competition, and prevent another economic meltdown like we saw in 2008.",
+"Because here's the thing – when the market is fair, everyone wins.",
+"So let's roll up our sleeves, let's get to work, and let's make sure our markets work for everyone.",
+"Education and healthcare. Two things every American deserves, no matter who they are or where they come from.",
+"It's not about handouts, it's about opportunity. And as president, I'm all about opportunity."
+                ],
+                fakes: 'politicians-en/trump/results/'
+            }
+        ];
+
+        const tablesContainer = document.getElementById('tablesContainer');
+
+        audioGroups.forEach((group, index) => {
+            const table = document.createElement('table');
+            const thead = document.createElement('thead');
+            const tbody = document.createElement('tbody');
+
+            // Add name and a blank line (if not the last element)
+            const nameDiv = document.createElement('div');
+            nameDiv.innerHTML = `<p style="text-align: center; margin-top: 40px; font-size: 24px; font-weight: bold;">${group.name}</p>`;
+            tablesContainer.appendChild(nameDiv);
+
+            // Create a table header, only valid for subsequent rows
+            thead.innerHTML = `
+                <tr>
+                    <th>Prompt Text</th>
+                    <th>Prompt Audio</th>
+                    <th>Fake Text</th>
+                    <th>Fake Audio</th>
+                </tr>
+            `;
+
+            // Training Audio Line
+            const trainingRow = document.createElement('tr');
+            trainingRow.innerHTML = `
+                <td colspan="4"> Training Audio: <audio controls><source src="${group.training}" type="audio/mpeg">Your browser does not support the audio element.</audio></td>
+            `;
+            tbody.appendChild(trainingRow);
+
+            // Other Lines
+            group.prompts.forEach((prompt, promptIndex) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${group.prompt_texts[promptIndex]}</td>
+                    <td><audio controls><source src="${prompt}" type="audio/mpeg">Your browser does not support the audio element.</audio></td>
+                    <td>${group.fake_texts[promptIndex]}</td>
+                    <td><audio controls><source src="${group.fakes}${promptIndex + 1}.wav" type="audio/mpeg">Your browser does not support the audio element.</audio></td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            tablesContainer.appendChild(table);
+
+
+        });
+    </script>
+</body>
+</html>
